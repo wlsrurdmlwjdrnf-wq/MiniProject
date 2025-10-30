@@ -15,11 +15,11 @@ MonoBehaviour:
   towerType: 0
   levelStats:
   - level: 1
-    Damage: 2
-    AtkSpeed: 1
+    Damage: 10
+    AtkSpeed: 2
   - level: 2
-    Damage: 0
-    AtkSpeed: 0
+    Damage: 50
+    AtkSpeed: 2
   - level: 3
     Damage: 500
-    AtkSpeed: 0
+    AtkSpeed: 2

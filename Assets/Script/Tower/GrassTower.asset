@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25cd7a431294f4458c1246f6d5e185a, type: 3}
   m_Name: GrassTower
   m_EditorClassIdentifier: 
-  towerType: 0
-  levelStats: []
+  towerType: 2
+  levelStats:
+  - level: 1
+    Damage: 50
+    AtkSpeed: 5
+  - level: 2
+    Damage: 300
+    AtkSpeed: 5
+  - level: 3
+    Damage: 2500
+    AtkSpeed: 5
