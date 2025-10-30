@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class UITrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    //원하는 오브젝트에 스크립트 적용한뒤에 출력하고싶은 text를 인스펙터창에 넣기
     public bool hover = false;
     public TextMeshProUGUI text;
     public void OnPointerEnter(PointerEventData eventData)
