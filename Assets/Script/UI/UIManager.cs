@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI roundCount;
     public TextMeshProUGUI goldCount;
     public TextMeshProUGUI fieldUnit;
+    public TextMeshProUGUI elementalAdvantage;
 
     private void Awake()
     {
@@ -33,5 +34,16 @@ public class UIManager : MonoBehaviour
     public void UpdateFieldUnit(int num)
     {
         fieldUnit.text = num.ToString() + " / 100";
+    }
+    
+    public void SetTrueElementalAdvantage(Vector2 pos)
+    {
+        elementalAdvantage.gameObject.SetActive(true);
+        elementalAdvantage.transform.position = pos;
+    }
+
+    public void SetFalseElementalAdvantage()
+    {
+        elementalAdvantage.gameObject.SetActive(false);
     }
 }
