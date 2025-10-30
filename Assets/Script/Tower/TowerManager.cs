@@ -1,29 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public enum TowerType
-{
-    Water,
-    Fire,
-    Grass,
-    Dark
-}
 public class TowerManager : MonoBehaviour
 {
-    public TowerType towerType;
-    private float attackPower;
-    private float attackSpeed;
-    private Dictionary<TowerType, Dictionary<int, float>> towerLvByAtk;
+    public static TowerManager ins;
+
+    private Dictionary<int, float> towerStatsWater;
     private void Awake()
     {
-        Dictionary<int, float> waterTower = new Dictionary<int, float>
+        if (ins == null)
         {
-            {1, 10 },
-            {2, 50 },
-            {3, 200 }
-        };
+            ins = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
-
 }
