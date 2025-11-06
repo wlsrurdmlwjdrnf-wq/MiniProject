@@ -2199,6 +2199,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 905907880}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &765409123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 765409125}
+  - component: {fileID: 765409124}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &765409124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765409123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a3026c4577f4d4d932aa5435052c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundCount: {fileID: 1178169791}
+  goldCount: {fileID: 1816428010}
+  fieldUnit: {fileID: 1985372534}
+  elementalAdvantage: {fileID: 1143695794}
+  waterlv1: {fileID: 1440295004}
+  waterlv2: {fileID: 877648739}
+  waterlv3: {fileID: 1301497133}
+  firelv1: {fileID: 528972826}
+  firelv2: {fileID: 1671585829}
+  firelv3: {fileID: 1995170261}
+  grasslv1: {fileID: 1876208315}
+  grasslv2: {fileID: 1257174486}
+  grasslv3: {fileID: 591820800}
+  darklv1: {fileID: 1386853743}
+  darklv2: {fileID: 1518833919}
+  darklv3: {fileID: 1673435053}
+  fieldUnits: 0
+  gold: 3000
+--- !u!4 &765409125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765409123}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.968157, y: 2.377703, z: 0.5464992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &786270577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,13 +2450,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 833600663}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2095863686}
+        m_TargetAssemblyTypeName: TowerSpawn, Assembly-CSharp
+        m_MethodName: SpawnTower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8571,7 +8633,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1763277911
+--- !u!1 &1815806527
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8579,41 +8641,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1763277913}
-  - component: {fileID: 1763277912}
+  - component: {fileID: 1815806529}
+  - component: {fileID: 1815806528}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: TowerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1763277912
+--- !u!114 &1815806528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763277911}
+  m_GameObject: {fileID: 1815806527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a3026c4577f4d4d932aa5435052c5d, type: 3}
+  m_Script: {fileID: 11500000, guid: be66ea6417b87114b85ca8e84f312954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundCount: {fileID: 1178169791}
-  goldCount: {fileID: 1816428010}
-  fieldUnit: {fileID: 1985372534}
-  elementalAdvantage: {fileID: 1143695794}
---- !u!4 &1763277913
+  countWater1: 0
+  countWater2: 0
+  countWater3: 0
+  countFire1: 0
+  countFire2: 0
+  countFire3: 0
+  countGrass1: 0
+  countGrass2: 0
+  countGrass3: 0
+  countDark1: 0
+  countDark2: 0
+  countDark3: 0
+--- !u!4 &1815806529
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763277911}
+  m_GameObject: {fileID: 1815806527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.775825, y: 0.42068878, z: -3.4517016}
+  m_LocalPosition: {x: -2.4316723, y: -1.1826973, z: 0.11217913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9155,7 +9225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 / 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9375,6 +9445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2095863685}
+  - component: {fileID: 2095863686}
   m_Layer: 0
   m_Name: SpawnTowerPosition
   m_TagString: Untagged
@@ -9397,6 +9468,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 905907880}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2095863686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095863684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c1f130c0c83eb429153255daa7b225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterlv1: {fileID: 6398087603097825522, guid: c71421e381dfb914c9fc7834b709ae6f, type: 3}
+  waterlv2: {fileID: 480332506117960939, guid: 9446ea09cf5eae64f9faf73f31edd738, type: 3}
+  waterlv3: {fileID: 7298800265622240028, guid: fce0e68a04d09f74cadb39b1fe11b9d4, type: 3}
+  firelv1: {fileID: 1458864895510564026, guid: 48e6568ab06d37846ade51f8d06e8c90, type: 3}
+  firelv2: {fileID: 4390135796707923444, guid: 19b3793b659de9042b94870a604f3ea5, type: 3}
+  firelv3: {fileID: 351404417527123681, guid: b2041475a35ef9f46a7fec240670efda, type: 3}
+  grasslv1: {fileID: 1790783448441202630, guid: 2f3597fa64c32b447b9bb8a0f1347018, type: 3}
+  grasslv2: {fileID: 457037678524894966, guid: ef67ee739b9b5d749ac8bd8ca66ed640, type: 3}
+  grasslv3: {fileID: 3282203029995424403, guid: 76375f2b7df93a34b896b2f1d7e7364b, type: 3}
+  darklv1: {fileID: 2183587794181930605, guid: dc62864b4e1e6b64e87b50455fe0e6eb, type: 3}
+  darklv2: {fileID: 357927575357408200, guid: 1ddabd510182d0743833d55004fadb06, type: 3}
+  darklv3: {fileID: 446460245232801201, guid: 40e4498080b90c24c916c4a73896b627, type: 3}
+  spawnPoint: {fileID: 2095863685}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9406,8 +9502,9 @@ SceneRoots:
   - {fileID: 905907880}
   - {fileID: 786270581}
   - {fileID: 1528506850}
-  - {fileID: 1763277913}
   - {fileID: 1122853632}
   - {fileID: 1683638727}
   - {fileID: 16971253}
   - {fileID: 648914808}
+  - {fileID: 765409125}
+  - {fileID: 1815806529}

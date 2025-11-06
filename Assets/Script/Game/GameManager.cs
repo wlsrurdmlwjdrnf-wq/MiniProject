@@ -46,5 +46,8 @@ public class GameManager : MonoBehaviour
             //라운드시작 로직
         }
     }
+    public void GameOver()
+    {
 
+    }
 }
