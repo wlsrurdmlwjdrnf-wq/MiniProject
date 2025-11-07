@@ -11,8 +11,12 @@ public class MobSpawn : MonoBehaviour
     [SerializeField]
     private Transform[] wayPoint;
 
+    private List<MobMoveTo> mobList;
+    public List<MobMoveTo> MobList => mobList;
+
     private void Awake()
     {
+        mobList = new List<MobMoveTo>();
         StartCoroutine("SpawnEnemyDelay");
     }
     private void Update()
@@ -47,9 +51,16 @@ public class MobSpawn : MonoBehaviour
             UIManager.ins.AddFieldUnit();
             MobMoveTo mobMoveTo = mob.GetComponent<MobMoveTo>();
 
-            mobMoveTo.SetWayPoint(wayPoint);
+            mobMoveTo.SetWayPoint(this, wayPoint);
+            mobList.Add(mobMoveTo);
             
             yield return new WaitForSeconds(spawnTime);
         }
+    }
+
+    public void RemoveMob(MobMoveTo mob)
+    {
+        mobList.Remove(mob);
+        Destroy(mob.gameObject);
     }
 }

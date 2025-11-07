@@ -9,11 +9,12 @@ public class MobMoveTo : MonoBehaviour
     private Transform[] waypoint;
     private int curIndex = 0;
     private MobMove mobMove;
+    private MobSpawn mobSpawn;
 
-    public void SetWayPoint(Transform[] wayPoint)
+    public void SetWayPoint(MobSpawn mob, Transform[] wayPoint)
     {
         mobMove = GetComponent<MobMove>();
-
+        mobSpawn = mob;
         wayPointCount = wayPoint.Length;
         waypoint = new Transform[wayPointCount];
         waypoint = wayPoint;
@@ -54,5 +55,9 @@ public class MobMoveTo : MonoBehaviour
             Vector3 dir = (waypoint[curIndex].position - transform.position).normalized;
             mobMove.MoveMob(dir);
         }
+    }
+    public void Die()
+    {
+        mobSpawn.RemoveMob(this);
     }
 }
